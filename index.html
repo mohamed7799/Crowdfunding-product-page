@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>crowdfunding-product-page</title>
+  </head>
+  <body>
+    <header>
+      <img
+        class="mobile-img"
+        src="./imgs/image-hero-mobile.jpg"
+        alt="image-header-mobile"
+      />
+      <img
+        class="desktop-img"
+        src="./imgs/image-hero-desktop.jpg"
+        alt="image-header-desktop"
+      />
+      <nav>
+        <a class="logo" href="#"><img src="./imgs/logo.svg" alt="" /></a>
+        <ul class="desktop-nav">
+          <li><a href="">About</a></li>
+          <li><a href="">Discover</a></li>
+          <li><a href="">Get Started</a></li>
+        </ul>
+        <i id="open-js" class="fas fa-bars nav-btn"></i>
+        <i id="close-js" class="fas fa-times nav-btn hidden"></i>
+      </nav>
+    </header>
+    <main>
+      <section class="bookmark-section card">
+        <img src="./imgs/logo-mastercraft.svg" alt="logo" />
+        <h1>Mastercraft Bamboo Monitor Riser</h1>
+        <p>
+          A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+        </p>
+        <div class="btns">
+          <button class="main-btn">Back this project</button>
+          <button class="bookmark-btn bookmarked">
+            <i class="fas fa-bookmark"></i><span>Bookmark</span>
+          </button>
+        </div>
+      </section>
+      <section class="states-section card">
+        <ul>
+          <li><span>$89,914</span> of $100,000 backed</li>
+          <hr />
+          <li><span>5,007</span> total backers</li>
+          <hr />
+          <li><span>56</span> days left</li>
+        </ul>
+        <progress value="89914" max="100000"></progress>
+      </section>
+
+      <section class="about-section card">
+        <h2>About this project</h2>
+        <p>
+          The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
+          that elevates your screen to a more comfortable viewing height.
+          Placing your monitor at eye level has the potential to improve your
+          posture and make you more comfortable while at work, helping you stay
+          focused on the task at hand.
+        </p>
+        <p>
+          Featuring artisan craftsmanship, the simplicity of design creates
+          extra desk space below your computer to allow notepads, pens, and USB
+          sticks to be stored under the stand.
+        </p>
+        <ul>
+          <li class="card pladge">
+            <div class="card-split">
+              <h3>Bamboo Stand</h3>
+              <span class="pladge">Pledge $25 or more</span>
+            </div>
+            <p>
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </p>
+            <div class="card-split">
+              <span class="left"> <strong>101</strong> left</span>
+              <button class="main-btn">Select Reward</button>
+            </div>
+          </li>
+          <li class="card pladge">
+            <div class="card-split">
+              <h3>Black Edition Stand</h3>
+              <span class="pladge">Pledge $75 or more</span>
+            </div>
+            <p>
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </p>
+            <div class="card-split">
+              <span class="left"> <strong>64</strong> left</span>
+              <button class="main-btn">Select Reward</button>
+            </div>
+          </li>
+          <li class="card pladge out-of-stock">
+            <div class="card-split">
+              <h3>Mahogany Special Edition</h3>
+              <span class="pladge">Pledge $200 or more</span>
+            </div>
+            <p>
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and
+              a personal thank you. You’ll be added to our Backer member list.
+              Shipping is included.
+            </p>
+            <div class="card-split">
+              <span class="left"> <strong>0</strong> left</span>
+              <button class="main-btn">Out of Stock</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <section class="mobile-nav-container hidden">
+      <ul class="mobile-nav">
+        <li><a href="#">About</a></li>
+        <hr />
+        <li><a href="#">Discover</a></li>
+        <hr />
+        <li><a href="#">Get Started</a></li>
+      </ul>
+    </section>
+    <!--
+    <section class="modal card">
+      <i id="close-modal-js" class="fas fa-times nav-btn"></i>
+      <h2>Back this project</h2>
+      <p>
+        Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+        the world?
+      </p>
+      <ul>
+        <li class="card">
+          <label
+            ><input type="radio" name="amount" />
+            <h3>Pledge with no reward</h3></label
+          >
+        </li>
+        <li class="card">
+          <label
+            ><input type="radio" name="amount" />
+            <h3>Bamboo Stand</h3></label
+          >
+        </li>
+        <li class="card">
+          <label
+            ><input type="radio" name="amount" />
+            <h3>Black Edition Stand</h3></label
+          >
+        </li>
+        <li class="card">
+          <label><input type="radio" name="amount" disabled /> </label>
+        </li>
+      </ul>
+    </section>
+    -->
+    <script src="code.js"></script>
+  </body>
+</html>
