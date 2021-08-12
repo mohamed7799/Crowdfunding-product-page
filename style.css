@@ -5,8 +5,13 @@
           box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  min-height: 100vh;
+  position: relative;
+  min-height: 100%;
   font-family: "Commissioner";
   background-color: whitesmoke;
 }
@@ -37,6 +42,12 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+hr {
+  border: none;
+  background-color: #b3b3b359;
+  height: 1px;
 }
 
 .desktop-img {
@@ -80,6 +91,7 @@ nav {
 
 .nav-btn {
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 main {
@@ -173,7 +185,7 @@ h1 {
   font-size: 2rem;
 }
 
-hr {
+.states-section ul hr {
   width: 30%;
   margin: auto;
   border: none;
@@ -201,26 +213,29 @@ progress::-webkit-progress-value {
   border-radius: 30px;
 }
 
-.pladge span {
-  color: #3cb4ac;
+.pladge__title {
   line-height: 2;
-  font-weight: 500;
 }
 
-.left {
-  color: #7a7a7a;
+.pladge__title span {
+  color: #3cb4ac;
+  font-weight: bold;
+}
+
+.pladge__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
+  line-height: 1.6;
+  color: #7a7a7a;
 }
 
-.left strong {
-  font-size: 2.5rem;
+.pladge__left strong {
+  font-size: 2rem;
   color: black;
 }
 
@@ -257,6 +272,140 @@ progress::-webkit-progress-value {
   width: 100%;
 }
 
+.modal-overlay {
+  position: absolute;
+  background-color: #00000070;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pladges-section-modal {
+  margin-top: 10rem;
+  width: 95%;
+  max-width: 700px;
+}
+
+.pladges-section-modal h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pladges-section-modal h2 i {
+  color: #7a7a7a;
+}
+
+.pladges-section-modal hr {
+  margin: 1rem 0rem;
+}
+
+.pladge-card-modal-container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.radio-btn,
+.radio-btn-js {
+  margin-top: 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 25px;
+  height: 25px;
+  border: 1px solid rgba(128, 128, 128, 0.562);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.radio-btn input,
+.radio-btn-js input {
+  display: none;
+}
+
+.check {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #3cb4ac;
+  display: none;
+}
+
+.radio-btn-js input:checked + .check {
+  display: inline-block;
+}
+
+.pladge-complete {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  margin-top: 10rem;
+}
+
+.enter-pladge {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pladge__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.pladge__inputs input {
+  width: 30%;
+  padding: 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  border: 1px solid gray;
+  font-size: 1rem;
+}
+
 @media screen and (min-width: 1000px) {
   .desktop-img {
     display: block;
@@ -270,8 +419,8 @@ progress::-webkit-progress-value {
     display: flex;
     gap: 2rem;
   }
-  #nav-btn {
-    display: none;
+  .nav-btn {
+    display: none !important;
   }
   .btns {
     -webkit-box-pack: justify;
@@ -308,13 +457,13 @@ progress::-webkit-progress-value {
         -ms-flex-align: center;
             align-items: center;
   }
-  hr {
+  .states-section ul hr {
     width: 10%;
     margin: 0;
     -webkit-transform: rotateZ(90deg);
             transform: rotateZ(90deg);
   }
-  .card-split {
+  .flex-split {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -324,6 +473,29 @@ progress::-webkit-progress-value {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .flex-split-modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
+  .enter-pladge {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .pladge__inputs {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -344,4 +516,8 @@ progress::-webkit-progress-value {
 
 .hidden {
   display: none !important;
+}
+
+.selected {
+  border: 2px solid #3cb4ac;
 }
